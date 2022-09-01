@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+body.div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grandparent {
+  width: 200px;
+  height: 200px;
+  background: green;
+}
+
+.parent {
+  width: 130px;
+  height: 130px;
+  background: blue;
+}
+
+.child {
+  width: 60px;
+  height: 60px;
+  background: red;
+}
