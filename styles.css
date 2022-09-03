@@ -2,10 +2,16 @@ body {
   margin: 0;
 }
 
-body.div {
+h1 {
+  text-align: center;
+  height: 20vh;
+}
+
+div {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .grandparent {
