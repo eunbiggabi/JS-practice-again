@@ -180,13 +180,32 @@
 
 // clearTimeout(tId);
 
-let num = 0;
+// let num = 0;
 
-function showTime() {
-  console.log(`안녕하세요. 접속하신지 ${num++}초가 지났습니다.`);
-  if (num >= 5) {
-    clearInterval(tId);
-  }
-}
+// function showTime() {
+//   console.log(`안녕하세요. 접속하신지 ${num++}초가 지났습니다.`);
+//   if (num >= 5) {
+//     clearInterval(tId);
+//   }
+// }
 
-const tId = setInterval(showTime, 1000);
+// const tId = setInterval(showTime, 1000);
+
+const add2 = (...param1) => {
+  let total = 0;
+  param1.forEach((num) => (total += num));
+  return total;
+};
+
+console.log(add2(1, 2, 3, 4, 5));
+console.log(add2(2, 3));
+
+const add3 = (...param1) => {
+  const result = param1.reduce((prev, cur) => {
+    return prev + cur;
+  }, 0);
+  return result;
+};
+
+console.log(add3(1, 2, 3, 4, 5));
+console.log(add3(2, 3));
