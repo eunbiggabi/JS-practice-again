@@ -191,21 +191,31 @@
 
 // const tId = setInterval(showTime, 1000);
 
-const add2 = (...param1) => {
-  let total = 0;
-  param1.forEach((num) => (total += num));
-  return total;
+// const add2 = (...param1) => {
+//   let total = 0;
+//   param1.forEach((num) => (total += num));
+//   return total;
+// };
+
+// console.log(add2(1, 2, 3, 4, 5));
+// console.log(add2(2, 3));
+
+// const add3 = (...param1) => {
+//   const result = param1.reduce((prev, cur) => {
+//     return prev + cur;
+//   }, 0);
+//   return result;
+// };
+
+// console.log(add3(1, 2, 3, 4, 5));
+// console.log(add3(2, 3));
+
+const addTwoDigits = (n) => {
+  let arr = n.toString().split('');
+  let num1 = parseInt(arr.slice(0, 1));
+  let num2 = parseInt(arr.slice(1));
+
+  return num1 + num2;
 };
 
-console.log(add2(1, 2, 3, 4, 5));
-console.log(add2(2, 3));
-
-const add3 = (...param1) => {
-  const result = param1.reduce((prev, cur) => {
-    return prev + cur;
-  }, 0);
-  return result;
-};
-
-console.log(add3(1, 2, 3, 4, 5));
-console.log(add3(2, 3));
+console.log(addTwoDigits(29));
