@@ -210,12 +210,100 @@
 // console.log(add3(1, 2, 3, 4, 5));
 // console.log(add3(2, 3));
 
-const addTwoDigits = (n) => {
-  let arr = n.toString().split('');
-  let num1 = parseInt(arr.slice(0, 1));
-  let num2 = parseInt(arr.slice(1));
+// const addTwoDigits = (n) => {
+//   let arr = n.toString().split('');
+//   let num1 = parseInt(arr.slice(0, 1));
+//   let num2 = parseInt(arr.slice(1));
 
-  return num1 + num2;
-};
+//   return num1 + num2;
+// };
 
-console.log(addTwoDigits(29));
+// console.log(addTwoDigits(29));
+
+// function adjacentElementsProduct(inputArray) {
+//   let largestProduct = inputArray[0] * inputArray[1];
+
+//   for (let i = 1; i < inputArray.length - 1; i++) {
+//     let product = inputArray[i] * inputArray[i + 1];
+//     largestProduct = largestProduct < product ? product : largestProduct;
+//   }
+
+//   return largestProduct;
+// }
+
+// console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3]));
+
+// let getSecondLargestNumber = (arr) => {
+//   let largestNumber = arr[0];
+//   let secondeLargestNumber = arr[0];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > largestNumber) {
+//       secondeLargestNumber = largestNumber;
+//       largestNumber = arr[i];
+//     } else if (arr[i] > secondeLargestNumber) {
+//       secondeLargestNumber = arr[i];
+//     }
+//   }
+//   return secondeLargestNumber;
+// };
+
+// console.log(getSecondLargestNumber([11, 2, 44, 7, 47]));
+
+// const add = (a, b) => a + b;
+// const multiply = (a, b) => a * b;
+// const calc = (a, b, callback) => callback(a, b);
+
+// console.log(calc(1, 2, add));
+// console.log(calc(1, 2, multiply));
+
+// const largestNumber = (arr) => Math.max(...arr);
+// const multiply = (a, b) => a * b;
+// const calc = (a, b, callback) => callback(a, b);
+
+// console.log(calc([11, 2, 47], add));
+// console.log(calc([11, 2, 47], multiply));
+// console.log(largestNumber([11, 2, 47]));
+
+// function allLongestStrings(inputArray) {
+//   let max = 0;
+//   let maxArr = [];
+//   const separateArr = inputArray.map((arr) => {
+//     return arr.split(',');
+//   });
+
+//   const result = separateArr.map((arr) => arr.join());
+
+//   for (let i = 0; i < result.length; i++) {
+//     if (result[i].length > max) {
+//       max = result[i].length;
+//     }
+//   }
+//   for (let i = 0; i < result.length; i++) {
+//     if (result[i].length === max) {
+//       maxArr.push(result[i]);
+//     }
+//   }
+//   return maxArr;
+// }
+
+// console.log(allLongestStrings(['aba', 'aa', 'ad', 'vcd', 'aba']));
+
+// console.log(['aba'].join().length);
+
+function allLongestStrings(inputArray) {
+  let longestLength = 0;
+  const longestWords = [];
+
+  inputArray.forEach((word) => {
+    longestLength = longestLength < word.length ? word.length : longestLength;
+  });
+  inputArray.forEach((word) => {
+    if (word.length === longestLength) {
+      longestWords.push(word);
+    }
+  });
+  return longestWords;
+}
+
+console.log(allLongestStrings(['aba', 'aa', 'ad', 'vcd', 'aba']));
