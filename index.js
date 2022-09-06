@@ -291,19 +291,79 @@
 
 // console.log(['aba'].join().length);
 
-function allLongestStrings(inputArray) {
-  let longestLength = 0;
-  const longestWords = [];
+// function allLongestStrings(inputArray) {
+//   let longestLength = 0;
+//   const longestWords = [];
 
-  inputArray.forEach((word) => {
-    longestLength = longestLength < word.length ? word.length : longestLength;
-  });
-  inputArray.forEach((word) => {
-    if (word.length === longestLength) {
-      longestWords.push(word);
+//   inputArray.forEach((word) => {
+//     longestLength = word.length > longestLength ? word.length : longestLength;
+//   });
+
+//   inputArray.forEach((word) => {
+//     if (word.length === longestLength) {
+//       longestWords.push(word);
+//     }
+//   });
+//   return longestWords;
+// }
+
+// console.log(allLongestStrings(['aba', 'aa', 'ad', 'vcd', 'aba']));
+
+// function alternatingSums(a) {
+//   let firstTeam = [];
+//   let secondTeam = [];
+
+//   for (let i = 0; i < a.length; i += 2) {
+//     firstTeam.push(a[i]);
+//   }
+//   const firstTeamSum = firstTeam.reduce((prev, cur) => prev + cur);
+
+//   for (let i = 1; i < a.length; i += 2) {
+//     secondTeam.push(a[i]);
+//   }
+//   const secondTeamSum = secondTeam.reduce((prev, cur) => prev + cur);
+
+//   return [firstTeamSum, secondTeamSum];
+// }
+
+// console.log(alternatingSums([50, 60, 60, 45, 70]));
+
+// let j = 1;
+// console.log((j = j + 1));
+// console.log((j += 1));
+// console.log(j++);
+
+// function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
+//   return yourLeft + yourRight === friendsLeft + friendsRight ? true : false;
+// }
+
+// console.log(areEquallyStrong(10, 15, 15, 10));
+// console.log(areEquallyStrong(15, 10, 15, 10));
+// console.log(areEquallyStrong(15, 10, 15, 9));
+
+export function areSimilar(a, b) {
+  let obj1 = {};
+  let obj2 = {};
+
+  a.forEach((num) => {
+    if (obj1[num]) {
+      return obj1[num]++;
+    } else {
+      return (obj1[num] = 1);
     }
   });
-  return longestWords;
+
+  b.forEach((num) => {
+    if (obj2[num]) {
+      return obj2[num]++;
+    } else {
+      return (obj2[num] = 1);
+    }
+  });
+
+  return JSON.stringify(obj1) == JSON.stringify(obj2);
 }
 
-console.log(allLongestStrings(['aba', 'aa', 'ad', 'vcd', 'aba']));
+console.log(areSimilar([1, 2, 3], [1, 2, 3]));
+console.log(areSimilar([1, 2, 3], [2, 1, 3]));
+console.log(areSimilar([1, 2, 2], [2, 1, 1]));
