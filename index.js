@@ -375,13 +375,27 @@
 
 // console.log(arrayChange([1, 1, 1]));
 
+// console.log([3, 4, 5, 6, 7, 8].splice(2, 4));
+
+// //splice
+// var array=[1,2,3,4,5];
+// console.log(array.splice(2));
+
+// //slice
+// var array2=[1,2,3,4,5]
+// console.log(array2.slice(2));
+
+// console.log("----after-----");
+// console.log(array);
+// console.log(array2);
+
 // function arrayConversion(inputArray) {
 //   const firstIteration = [];
 //   const secondIteration = [];
 //   const thirdIteration = [];
 
 //   for (let i = 0; i < inputArray.length; i += 2) {
-//     firstIteration.push(inputArray.slice(i, i + 2).reduce((a, b) => a + b));
+//     firstIteration.push(inputArray[i] + inputArray[i + 1]);
 //   }
 
 //   for (let i = 0; i < firstIteration.length; i += 2) {
@@ -400,20 +414,6 @@
 
 // console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
 
-// console.log([3, 4, 5, 6, 7, 8].splice(2, 4));
-
-// //splice
-// var array=[1,2,3,4,5];
-// console.log(array.splice(2));
-
-// //slice
-// var array2=[1,2,3,4,5]
-// console.log(array2.slice(2));
-
-// console.log("----after-----");
-// console.log(array);
-// console.log(array2);
-
 function arrayConversion(inputArray) {
   let isOdd = true;
 
@@ -426,18 +426,17 @@ function arrayConversion(inputArray) {
 }
 
 function sumProduct(nums, isOdd) {
-  const sumProducts = [];
+  let sumProducts = [];
 
   if (isOdd) {
-    for (let i = 0; i < nums.length; i += 2) {
+    for (i = 0; i < nums.length; i += 2) {
       sumProducts.push(nums[i] + nums[i + 1]);
     }
   } else {
-    for (let i = 0; i < nums.length; i += 2) {
+    for (i = 0; i < nums.length; i += 2) {
       sumProducts.push(nums[i] * nums[i + 1]);
     }
   }
-
   return sumProducts;
 }
 
