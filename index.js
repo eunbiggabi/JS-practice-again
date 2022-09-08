@@ -341,29 +341,104 @@
 // console.log(areEquallyStrong(15, 10, 15, 10));
 // console.log(areEquallyStrong(15, 10, 15, 9));
 
-export function areSimilar(a, b) {
-  let obj1 = {};
-  let obj2 = {};
+// function areSimilar(a, b) {
+//   let obj1 = {};
+//   let obj2 = {};
 
-  a.forEach((num) => {
-    if (obj1[num]) {
-      return obj1[num]++;
-    } else {
-      return (obj1[num] = 1);
-    }
-  });
+//   a.forEach((num) => {
+//     if (obj1[num]) {
+//       return obj1[num]++;
+//     } else {
+//       return (obj1[num] = 1);
+//     }
+//   });
 
-  b.forEach((num) => {
-    if (obj2[num]) {
-      return obj2[num]++;
-    } else {
-      return (obj2[num] = 1);
-    }
-  });
+//   b.forEach((num) => {
+//     if (obj2[num]) {
+//       return obj2[num]++;
+//     } else {
+//       return (obj2[num] = 1);
+//     }
+//   });
 
-  return JSON.stringify(obj1) == JSON.stringify(obj2);
+//   return JSON.stringify(obj1) == JSON.stringify(obj2);
+// }
+
+// console.log(areSimilar([1, 2, 3], [1, 2, 3]));
+// console.log(areSimilar([1, 2, 3], [2, 1, 3]));
+// console.log(areSimilar([1, 2, 2], [2, 1, 1]));
+
+// function arrayChange(inputArray) {
+
+//   return inputArray.join('').length
+// }
+
+// console.log(arrayChange([1, 1, 1]));
+
+// function arrayConversion(inputArray) {
+//   const firstIteration = [];
+//   const secondIteration = [];
+//   const thirdIteration = [];
+
+//   for (let i = 0; i < inputArray.length; i += 2) {
+//     firstIteration.push(inputArray.slice(i, i + 2).reduce((a, b) => a + b));
+//   }
+
+//   for (let i = 0; i < firstIteration.length; i += 2) {
+//     secondIteration.push(
+//       firstIteration.slice(i, i + 2).reduce((a, b) => a * b)
+//     );
+//   }
+
+//   for (let i = 0; i < secondIteration.length; i += 2) {
+//     thirdIteration.push(
+//       secondIteration.slice(i, i + 2).reduce((a, b) => a + b)
+//     );
+//   }
+//   return thirdIteration;
+// }
+
+// console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
+
+// console.log([3, 4, 5, 6, 7, 8].splice(2, 4));
+
+// //splice
+// var array=[1,2,3,4,5];
+// console.log(array.splice(2));
+
+// //slice
+// var array2=[1,2,3,4,5]
+// console.log(array2.slice(2));
+
+// console.log("----after-----");
+// console.log(array);
+// console.log(array2);
+
+function arrayConversion(inputArray) {
+  let isOdd = true;
+
+  while (inputArray.length !== 1) {
+    inputArray = sumProduct(inputArray, isOdd);
+    isOdd = !isOdd;
+  }
+
+  return inputArray[0];
 }
 
-console.log(areSimilar([1, 2, 3], [1, 2, 3]));
-console.log(areSimilar([1, 2, 3], [2, 1, 3]));
-console.log(areSimilar([1, 2, 2], [2, 1, 1]));
+function sumProduct(nums, isOdd) {
+  const sumProducts = [];
+
+  if (isOdd) {
+    for (let i = 0; i < nums.length; i += 2) {
+      sumProducts.push(nums[i] + nums[i + 1]);
+    }
+  } else {
+    for (let i = 0; i < nums.length; i += 2) {
+      sumProducts.push(nums[i] * nums[i + 1]);
+    }
+  }
+
+  return sumProducts;
+}
+
+console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
