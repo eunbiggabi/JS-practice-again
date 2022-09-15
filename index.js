@@ -414,30 +414,39 @@
 
 // console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
 
-function arrayConversion(inputArray) {
-  let isOdd = true;
+// function arrayConversion(inputArray) {
+//   let isOdd = true;
 
-  while (inputArray.length !== 1) {
-    inputArray = sumProduct(inputArray, isOdd);
-    isOdd = !isOdd;
-  }
+//   while (inputArray.length !== 1) {
+//     inputArray = sumProduct(inputArray, isOdd);
+//     isOdd = !isOdd;
+//   }
 
-  return inputArray[0];
-}
+//   return inputArray[0];
+// }
 
-function sumProduct(nums, isOdd) {
-  let sumProducts = [];
+// function sumProduct(nums, isOdd) {
+//   let sumProducts = [];
 
-  if (isOdd) {
-    for (i = 0; i < nums.length; i += 2) {
-      sumProducts.push(nums[i] + nums[i + 1]);
-    }
-  } else {
-    for (i = 0; i < nums.length; i += 2) {
-      sumProducts.push(nums[i] * nums[i + 1]);
-    }
-  }
-  return sumProducts;
-}
+//   if (isOdd) {
+//     for (i = 0; i < nums.length; i += 2) {
+//       sumProducts.push(nums[i] + nums[i + 1]);
+//     }
+//   } else {
+//     for (i = 0; i < nums.length; i += 2) {
+//       sumProducts.push(nums[i] * nums[i + 1]);
+//     }
+//   }
+//   return sumProducts;
+// }
 
-console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
+// console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
+
+let student = { name: 'kyu', age: 29 };
+let { name, age } = student;
+
+let score = [78, 99, 81];
+let [kyu, sammi] = score;
+
+console.log(age);
+console.log(kyu);
