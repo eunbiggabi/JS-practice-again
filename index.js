@@ -442,11 +442,100 @@
 
 // console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8]));
 
-let student = { name: 'kyu', age: 29 };
-let { name, age } = student;
+// let student = { name: 'kyu', age: 29 };
+// let { name, age } = student;
 
-let score = [78, 99, 81];
-let [kyu, sammi] = score;
+// let score = [78, 99, 81];
+// let [kyu, sammi] = score;
 
-console.log(age);
-console.log(kyu);
+// console.log(age);
+// console.log(kyu);
+
+// export function chunkyMonkey(arr, size) {
+//   let newArr = [];
+
+//   for (let i = 0; i < arr.length; i += size) {
+//     newArr.push(arr.slice(i, i + size));
+//   }
+//   return newArr;
+// }
+
+// console.log(chunkyMonkey(['a', 'b', 'c', 'd'], 2));
+// console.log(chunkyMonkey([0, 1, 2, 3, 4, 5], 4));
+
+// function commonCharacterCount(s1, s2) {
+//   let s1Arr = s1.split('');
+//   let s2Arr = s2.split('');
+//   let count = 0;
+
+//   s1Arr.forEach((char) => {
+//     if (s2Arr.includes(char)) {
+//       count++;
+//       s2Arr.splice(s2Arr.indexOf(char), 1);
+//       s2Arr
+//     }
+//   });
+//   return count;
+// }
+
+// console.log(commonCharacterCount('aabcc', 'adcaa'));
+
+// const myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
+// const removed = myFish.splice(3, 1);
+// console.log(myFish)
+
+// const longestChar = (str) => {
+//   obj = {};
+//   toArr = str.split('');
+//   maxChar = '';
+//   maxNum = 0;
+
+//   toArr.forEach((char) => {
+//     if (obj[char]) {
+//       obj[char]++;
+//     } else {
+//       obj[char] = 1;
+//     }
+//   });
+
+//   for (let char in obj) {
+//     if (obj[char] > maxNum) {
+//       maxNum = obj[char];
+//       maxChar = char;
+//     }
+//   }
+
+//   return maxChar;
+// };
+
+// console.log(longestChar('javascript'));
+
+let longestChar = (str) => {
+  const countNumForChar = {};
+  const makeArr = str.split('');
+  let largestNum = 0;
+  let longestChar = '';
+  const longestChars = [];
+
+  makeArr.forEach((char) => {
+    if (countNumForChar[char]) {
+      return countNumForChar[char]++;
+    } else {
+      return (countNumForChar[char] = 1);
+    }
+  });
+
+  for (let char in countNumForChar) {
+    if (countNumForChar[char] >= largestNum) {
+      largestNum = countNumForChar[char];
+    }
+  }
+  for (let char in countNumForChar) {
+    if (countNumForChar[char] === largestNum) {
+      longestChars.push(char);
+    }
+  }
+  return longestChars;
+};
+
+console.log(longestChar('javasscrript'));
